@@ -5,6 +5,6 @@ A simple NodeJS server to create an endpoint for a Sendgrid account
 
 ```
 PORT=3001
-DEBUG=true
-ALLOWED_ORIGINS=http://example.com https://example.com https://domain.example.com 
+ALLOWED_ORIGINS=http://example.com
+SENDGRID_API_KEY=<Sendgrid API key>
 ```

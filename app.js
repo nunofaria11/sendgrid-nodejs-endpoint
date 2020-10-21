@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
 const dotenv = require('dotenv');
 
 const mailRouter = require('./routes/mail');
@@ -10,7 +10,7 @@ const app = express();
 
 dotenv.config();
 
-app.use(logger('dev'));
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -26,17 +26,16 @@ app.use(cors({
         }
 
         if (allowedOrigins.indexOf(origin) === -1) {
-            var msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
+            var msg = "The CORS policy for this site does not allow access from the specified Origin.";
             return callback(new Error(msg), false);
         }
         return callback(null, true);
     }
 }));
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
     res.json({ message: "Hello World!" });
 });
-app.use('/mail', mailRouter);
+app.use("/mail", mailRouter);
 
 module.exports = app;
