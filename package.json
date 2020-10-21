@@ -1,0 +1,30 @@
+{
+  "name": "sendgrid-nodejs-endpoint",
+  "version": "1.0.0",
+  "description": "A simple NodeJS server to create an endpoint for a Sendgrid account",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nunofaria11/sendgrid-nodejs-endpoint.git"
+  },
+  "keywords": [
+    "nodejs",
+    "sendgrid",
+    "mail"
+  ],
+  "author": "nunofaria11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nunofaria11/sendgrid-nodejs-endpoint/issues"
+  },
+  "homepage": "https://github.com/nunofaria11/sendgrid-nodejs-endpoint#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
