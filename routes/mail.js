@@ -11,6 +11,8 @@ if (process.env.SENDGRID_API_KEY) {
   sendgridMail.setApiKey(process.env.SENDGRID_API_KEY);
 }
 
+const FROM = process.env.FROM;
+
 
 /* POST mail. */
 router.post('/', function(req, res, next) {
@@ -37,7 +39,7 @@ function sendMail(params) {
     var msg = {
         to: params.to,
         bcc: params.bcc,
-        from: params.from,
+        from: FROM,
         subject: params.subject,
         text: params.text,
         html: params.html,

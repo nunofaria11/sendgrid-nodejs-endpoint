@@ -7,6 +7,7 @@ A simple NodeJS server to create an endpoint for a Sendgrid account.
 PORT=3001
 ALLOWED_ORIGINS=http://example.com
 SENDGRID_API_KEY=<Sendgrid API key>
+FROM=sender@mail.com
 ```
 
 NPM scripts:
@@ -35,7 +36,6 @@ POST endpoint receives body with JSON object and uses the same object API as [Se
 ```
 > POST /mail
 {
-    "from": "sender@mail.com",
     "to": "recipient@mail.com",
     "subject": "test sendgrid client",
     "text": "test sendgrid client",
