@@ -35,10 +35,10 @@ POST endpoint receives body with JSON object and uses the same object API as [Se
 ```
 > POST /mail
 {
-	"from": "sender@mail.com",
-	"to": "recipient@mail.com",
-	"subject": "test sendgrid client",
-	"text": "test sendgrid client",
+    "from": "sender@mail.com",
+    "to": "recipient@mail.com",
+    "subject": "test sendgrid client",
+    "text": "test sendgrid client",
     "html": "test sendgrid client"
 }
 
