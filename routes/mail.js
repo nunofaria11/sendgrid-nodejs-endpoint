@@ -1,7 +1,9 @@
 const express = require('express');
 const sendgridMail = require('@sendgrid/mail');
 const router = express.Router();
-const logger = require("../services/logger")
+const logger = require("../services/logger");
+const dotenv = require('dotenv');
+dotenv.config()
 
 // Initialize Sendgrid API key
 if (process.env.SENDGRID_API_KEY) {
@@ -15,7 +17,7 @@ router.post('/', function(req, res, next) {
   
   sendMail(req.body).then(
     () => res.sendStatus(200),
-    () => res.sendStatus(500),
+    () => res.sendStatus(500)
   );
 });
 
