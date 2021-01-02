@@ -1,6 +1,8 @@
 # sendgrid-nodejs-endpoint
 A simple NodeJS server to create an endpoint for a Sendgrid account.
 
+This project can be [used as a template](https://github.com/nunofaria11/sendgrid-nodejs-endpoint/generate).
+
 ## Environment
 
 ```
