@@ -18,7 +18,7 @@ npm start               # Starts the server
 npm run start-debug     # Starts the server in debug mode
 ```
 
-## REST Endpoint
+## REST Endpoints
 
 **"/" root endpoint**
 
@@ -47,9 +47,40 @@ POST endpoint receives body with JSON object and uses the same object API as [Se
 < 200 OK
 ```
 
+## Authentication
+Basic and Digest authentication is available but optional. To configure authentication set the environment variables:
+
+```
+# The authentication scheme to use (optional); supported values: Basic|Digest
+AUTH_SCHEME=Digest
+
+# The authentication realm (optional); default value: sendgrid-nodejs-endpoint
+AUTH_REALM=my-realm
+
+# The path to the user encrypted passwords file (optional); default value: /../users.htpasswd
+AUTH_PASSFILE=
+```
+
+The encrypted passwords file can be generated with [htdigest](https://github.com/http-auth/htdigest):
+```
+htdigest users.htpasswd my-realm test-username
+```
+
+Note: If no `AUTH_SCHEME` is defined no authentication is applied.
+
+## Allowed origins
+Allowed origins can be configured in environment variable `ALLOWED_ORIGINS` (space separated for multiple values).
+
+```
+# The allowed origins for CORS configuration; default value: *
+ALLOWED_ORIGINS=http://example1.com http://example2.com
+```
+
 ## Dependencies
 - [express](http://expressjs.com)
 - [morgan](https://github.com/expressjs/morgan)
 - [debug](https://github.com/visionmedia/debug)
 - [dotenv](https://github.com/motdotla/dotenv)
 - [sendgrid/mail](https://github.com/sendgrid/sendgrid-nodejs/tree/main/packages/mail)
+- [http-auth](https://github.com/http-auth/http-auth)
+- [http-auth-connect](https://github.com/http-auth/http-auth-connect)

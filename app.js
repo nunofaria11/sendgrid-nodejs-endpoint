@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 
 const mailRouter = require('./routes/mail');
+const auth = require('./middleware/auth');
 
 const app = express();
 
@@ -33,6 +34,10 @@ app.use(cors({
     }
 }));
 
+// Auth middleware
+app.use(auth);
+
+// Rest endpoints
 app.get("/", (req, res) => {
     res.json({ message: "Hello World!" });
 });
