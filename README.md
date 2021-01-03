@@ -61,12 +61,21 @@ AUTH_REALM=my-realm
 AUTH_PASSFILE=
 ```
 
-The encrypted passwords file can be generated with [htdigest](https://github.com/http-auth/htdigest):
+**Note**: If no `AUTH_SCHEME` is defined no authentication is applied.
+
+### Generate password files
+
+The encrypted passwords file can be generated with [htdigest](https://github.com/http-auth/htdigest) for Digest scheme, and [htpasswd](https://github.com/http-auth/htpasswd) for Basic scheme.
+
+**Digest**
 ```
-htdigest users.htpasswd my-realm test-username
+htdigest users.htdigest test-realm test-username
 ```
 
-Note: If no `AUTH_SCHEME` is defined no authentication is applied.
+**Basic**
+```
+htpasswd users.htpasswd test-username
+```
 
 ## Allowed origins
 Allowed origins can be configured in environment variable `ALLOWED_ORIGINS` (space separated for multiple values).
