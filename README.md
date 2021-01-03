@@ -57,7 +57,7 @@ AUTH_SCHEME=Digest
 # The authentication realm (optional); default value: sendgrid-nodejs-endpoint
 AUTH_REALM=my-realm
 
-# The path to the user encrypted passwords file (optional); default value: /../users.htpasswd
+# The path to the user encrypted passwords file (optional); default value: /../users.passfile
 AUTH_PASSFILE=
 ```
 

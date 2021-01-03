@@ -4,7 +4,7 @@ const authConnect = require("http-auth-connect");
 
 const scheme = process.env.AUTH_SCHEME;
 const realm = process.env.AUTH_REALM    || "sendgrid-nodejs-endpoint";
-const file = process.env.AUTH_PASSFILE  || (__dirname + "/../users.htpasswd")
+const file = process.env.AUTH_PASSFILE  || (__dirname + "/../users.passfile")
 
 let method;
 switch(scheme) {
