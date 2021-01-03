@@ -5,11 +5,20 @@ This project can be [used as a template](https://github.com/nunofaria11/sendgrid
 
 ## Environment
 
+These configurations can be placed in a `.env` file at the root of the project:
+
 ```
 PORT=3001
-ALLOWED_ORIGINS=http://example.com
 SENDGRID_API_KEY=<Sendgrid API key>
+
 FROM=sender@mail.com
+ALLOWED_RECIPIENTS=recipient1@mail.com recipient2@mail.com
+
+ALLOWED_ORIGINS=http://example.com
+
+AUTH_SCHEME=Digest
+AUTH_REALM=test-realm
+AUTH_PASSFILE=/path/users.passfile
 ```
 
 NPM scripts:
@@ -84,6 +93,15 @@ Allowed origins can be configured in environment variable `ALLOWED_ORIGINS` (spa
 # The allowed origins for CORS configuration; default value: *
 ALLOWED_ORIGINS=http://example1.com http://example2.com
 ```
+
+## Allowed recipients
+A group of allowed recipients can be configured via the environment variable `ALLOWED_RECIPIENTS` (space separated for multiple values). If one of the recipients is not in the allow-list the request is rejected with "400 Bad Request" response code.
+
+```
+ALLOWED_RECIPIENTS=address_1@mail.com address_2@mail.com
+```
+
+**Note**: if unspecified recipients will not be filtered.
 
 ## Dependencies
 - [express](http://expressjs.com)
